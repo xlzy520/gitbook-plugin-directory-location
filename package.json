@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-directory-location",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scroll to the corresponding directory according to the URL when entering the page.链接进入时滚动到到相应的目录",
   "main": "index.js",
   "scripts": {
