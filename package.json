@@ -1,10 +1,20 @@
 {
   "name": "gitbook-plugin-directory-location",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scroll to the corresponding directory according to the URL when entering the page.链接进入时滚动到到相应的目录",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitbook",
+    "gitbook-plugin",
+    "directory location"
+  ],
+  "homepage": "https://github.com/xlzy520/gitbook-plugin-directory-location",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xlzy520/gitbook-plugin-directory-location.git"
   },
   "author": "xlzy520",
   "license": "MIT",
@@ -13,10 +23,10 @@
   },
   "gitbook": {
     "properties": {
-      "myConfigKey": {
-        "type": "string",
-        "default": "it's the default value",
-        "description": "It defines my awesome config!"
+      "scrollTime": {
+        "type": "number",
+        "default": 300,
+        "description": "It defines scroll delay time!"
       }
     }
   }

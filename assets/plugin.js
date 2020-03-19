@@ -1,14 +1,21 @@
-require(['gitbook'], function(gitbook) {
-  function scrollToPage() {
-    const currentPagePath = location.pathname.substr(location.pathname.lastIndexOf('/')+1)
-    const dom = document.querySelector(`a[href="${currentPagePath}"]`)
+require(['gitbook', 'jquery'], function(gitbook, $) {
+  function scrollToPage(scrollTime) {
+    var currentPagePath = location.pathname.substr(location.pathname.lastIndexOf('/')+1)
+    var dom = $(`a[href="${currentPagePath}"]`)[0]
     document.body.onload = () =>{
-      dom.scrollIntoView({
-        behavior: "smooth", block: "center", inline: "nearest"
-      })
+      $(".book-summary").animate({
+        scrollTop: dom.offsetTop - (window.innerHeight - dom.offsetHeight) / 2
+      }, scrollTime || 300)
+      // dom.scrollIntoView({
+      //   behavior: "smooth", block: "center", inline: "nearest"
+      // })
     }
   }
-  scrollToPage()
+  gitbook.events.bind('start', function (e, config) {
+    var scrollTime = config.scrollTime
+    scrollToPage(scrollTime)
+  })
+ 
 })
 
 
