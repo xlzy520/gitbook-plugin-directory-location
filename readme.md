@@ -3,3 +3,17 @@
 
 Scroll to the corresponding directory according to the URL when entering the page.
 
+# Useage
+```json
+{
+  "plugins": [
+    "directory-location"
+  ],
+  "pluginsConfig": {
+    "scrollTime": 300
+  }
+}
+
+```
+
+
